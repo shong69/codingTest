@@ -1,18 +1,26 @@
 import java.util.Scanner;
 public class Main {
+    static int a; 
+    static int b;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int temp = 0;
-        sumAb(a,b);
+        int i = sc.nextInt();
+        int j = sc.nextInt();
+
+        // a = i; 
+        // b = j;
+        // sumAb(a,b); a,b를 함수 안에서 바꿔서 call By Value가 된다.
+        sumAb(i,j);
+        System.out.print(a + " "+ b);
     }
-    public static void sumAb(int a, int b){
-        //a가 더 작은 수가 되도록
-        if(Integer.compare(a,b)>0){
-            System.out.print((b+10)+" "+(a*2));
+    public static void sumAb(int i, int j){
+        //static 변수에 i,j값을 넣는다.
+        if(i>j){
+            a = i*2;
+            b = j+10;
         }else{
-            System.out.print((a+10) +" "+ (b*2));
+            a = i+10;
+            b = j*2;
         }
         
     }
