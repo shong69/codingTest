@@ -7,6 +7,7 @@ public class Main {
         int C = sc.nextInt();
         
         int num = 24*60*11+60*11+11;
-        System.out.print(A*24*60+B*60+C - num);
+
+        System.out.print((A*24*60+B*60+C - num)>0?A*24*60+B*60+C - num:-1);
     }
 }
