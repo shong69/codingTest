@@ -10,9 +10,14 @@ public class Main {
             char dir = sc.next().charAt(0);
             point = move(point,x,dir);
         }
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= 2) {
+                count++;
+            }
+        }
 
-        int[] num = Arrays.stream(arr).filter(idx-> idx>=2).toArray();
-        System.out.print(num.length);
+        System.out.print(count);
     }
 
     public static int move(int point, int x, char dir){
