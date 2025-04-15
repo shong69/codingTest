@@ -37,7 +37,7 @@ class Point implements Comparable<Point>{
         if(Math.abs(point.x)+ Math.abs(point.y)==Math.abs(this.x)+Math.abs(this.y)){
             return this.id - point.id;
         }
-        return (this.x - point.x) + (this.y - point.y);
+        return (Math.abs(this.x) - Math.abs(point.x)) + (Math.abs(this.y) - Math.abs(point.y));
     }
 
 }
