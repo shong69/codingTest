@@ -9,7 +9,7 @@ public class Main {
         for (int i = 0; i < K; i++) {
             int A = sc.nextInt();
             int B = sc.nextInt();
-            chill(arr,A,B);
+            chill(arr,A-1,B-1);
         }
 
         int maxNum = 0;
@@ -20,7 +20,7 @@ public class Main {
     }
     public static void chill(int[] arr, int a, int b){
         for(int i = a;i<=b;i++){
-            arr[a] += 1;
+            arr[i] += 1;
         }
     }
 }
