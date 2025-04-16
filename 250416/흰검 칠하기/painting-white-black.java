@@ -41,7 +41,6 @@ public class Main {
         if(d=='R'){
             for(int i=0;i<x;i++){
                 if(isGray(point)){
-                    arr[point]='G';
                     point++;
                     continue;
                 }
@@ -58,7 +57,6 @@ public class Main {
             
             for(int i=0;i<x;i++){
                 if(isGray(point)){
-                    arr[point]='G';
                     point--;
                     continue;
                 }
@@ -75,6 +73,7 @@ public class Main {
 
     public static boolean isGray(int x){
         if(arrL[x]>=2 && arrR[x]>=2){
+            arr[x]='G';
             return true;
         }else{
             return false;
