@@ -39,7 +39,7 @@ public class Main {
             for(int i=0;i<x;i++){
                 
                 if(isGray(point)){
-                    point++;
+                    if(i<x-1)point++;
                     continue;
                 }
                 arr[point] = 'R';
@@ -56,7 +56,7 @@ public class Main {
             
             for(int i=0;i<x;i++){
                 if(isGray(point)){
-                    point--;
+                    if(i<x-1)point--;
                     continue;
                 }
                 arr[point] = 'L';
