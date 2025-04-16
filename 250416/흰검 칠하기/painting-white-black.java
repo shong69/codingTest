@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class Main {
-    static int[] arrL = new int[200001];
-    static int[] arrR = new int[200001];
-    static char[] arr = new char[200001];
+    static int[] arrL = new int[30];
+    static int[] arrR = new int[30];
+    static char[] arr = new char[30];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        int point = 100000;
+        int point = 15;
+
         for (int i = 0; i < N; i++) {
             int x = sc.nextInt();
             char d = sc.next().charAt(0);
@@ -16,22 +17,16 @@ public class Main {
         int lCount = 0;
         int RCount = 0;
         int GCount = 0;
+
         for(int i=0;i<arrL.length;i++){
             if(arrL[i]>=2 && arrR[i]>=2){
                 GCount++;
             }else{
                 //수가 더 큰 쪽을 기록하면 됨
-                if (arrL[i] > arrR[i]) {
+                if(arr[i]=='L'){
                     lCount++;
-                } else if(arrR[i]>arrR[i]){
+                }else if(arr[i]=='R'){
                     RCount++;
-                }else{
-                    //회색 타일이 아니지만 수가 같은 경우
-                    if(arr[i]=='L'){
-                        lCount++;
-                    }else if(arr[i]=='R'){
-                        RCount++;
-                    }
                 }
             }
         }
@@ -49,6 +44,7 @@ public class Main {
                     arrR[point++]++;
                 }else{
                     arrR[point]++;
+                    arr[point]='R';
                 }
             }
 
@@ -65,6 +61,7 @@ public class Main {
                     arrL[point--]++;
                 }else{
                     arrL[point]++;
+                    arr[point]='L';
                 }
             }
             return point;
