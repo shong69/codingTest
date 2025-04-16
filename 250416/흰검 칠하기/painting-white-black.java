@@ -12,10 +12,6 @@ public class Main {
             char d = sc.next().charAt(0);
             point = move(point,x,d);
         }
-        // Please write your code here.
-        //왼쪽으로 가면 흰색, 오른쪽으로 가면 검정색
-        //흰색 2, 검정 2회인 경우 회색으로 바뀐다 -> 무효화 상태
-        //흰색, 검정색, 회색의 개수를 각각 출력하기
 
         int lCount = 0;
         int RCount = 0;
@@ -30,6 +26,7 @@ public class Main {
                 } else if(arrR[i]>arrR[i]){
                     RCount++;
                 }else{
+                    //회색 타일이 아니지만 수가 같은 경우
                     if(arr[i]=='L'){
                         lCount++;
                     }else if(arr[i]=='R'){
@@ -44,6 +41,7 @@ public class Main {
         if(d=='R'){
             for(int i=0;i<x;i++){
                 if(isGray(point)){
+                    arr[point]='G';
                     point++;
                     continue;
                 }
@@ -60,6 +58,7 @@ public class Main {
             
             for(int i=0;i<x;i++){
                 if(isGray(point)){
+                    arr[point]='G';
                     point--;
                     continue;
                 }
