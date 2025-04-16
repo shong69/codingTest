@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        int point = 50000;
+        int point = 100000;
         for (int i = 0; i < N; i++) {
             int x = sc.nextInt();
             char d = sc.next().charAt(0);
