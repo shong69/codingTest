@@ -1,12 +1,12 @@
 import java.util.Scanner;
 public class Main {
-    static int[] arrL = new int[20];
-    static int[] arrR = new int[20];
-    static char[] arr = new char[20];
+    static int[] arrL = new int[100000];
+    static int[] arrR = new int[100000];
+    static char[] arr = new char[100000];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        int point = 10;
+        int point = 50000;
         for (int i = 0; i < N; i++) {
             int x = sc.nextInt();
             char d = sc.next().charAt(0);
