@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class Main {
-    static int[] arrL = new int[100000];
-    static int[] arrR = new int[100000];
-    static char[] arr = new char[100000];
+    static int[] arrL = new int[200001];
+    static int[] arrR = new int[200001];
+    static char[] arr = new char[200001];
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
