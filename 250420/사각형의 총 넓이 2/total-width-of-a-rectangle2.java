@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class Main {
     static int[][] arr = new int[200][200];
     public static void main(String[] args) {
@@ -16,8 +16,15 @@ public class Main {
             chill(x1[i],y1[i],x2[i],y2[i]);
         }
         int answer = 0;
-        for(int i=0;i<arr.length;i++){
-            for(int j=0;j<arr.length;j++){
+        int Xst = 0, Xend=0, Yst=0, Yend=0;
+        for(int i=0;i<n;i++){
+            Xst=Math.min(Xst,x1[i]);
+            Xend=Math.max(Xend,x2[i]);
+            Yst=Math.min(Yst,y1[i]);
+            Yend=Math.max(Yend,y2[i]);
+        }
+        for(int i=Xst;i<Xend;i++){
+            for(int j=Yst;j<Yend;j++){
                 if(arr[i][j]==1)answer++;
             }
         }
