@@ -25,7 +25,7 @@ public class Main {
         }
         for(int i=Xst;i<Xend;i++){
             for(int j=Yst;j<Yend;j++){
-                if(arr[i][j]==1)answer++;
+                if(arr[100+i][100+j]==1)answer++;
             }
         }
         System.out.print(answer);
@@ -33,7 +33,7 @@ public class Main {
     public static void chill(int x1, int y1, int x2, int y2){
         for(int i=x1;i<x2;i++){
             for(int j=y1;j<y2;j++){
-                arr[i][j]=1;
+                arr[100+i][100+j]=1;
             }
         }
     }
