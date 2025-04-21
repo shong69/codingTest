@@ -8,12 +8,18 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        int cnt = 1;
+        int maxCnt = 1;
+        int temp=1;
         for(int i=0;i<n;i++){
             if(i!=0&&arr[i]==arr[i-1]){
-                cnt++;
+                temp++;
+            }else{
+                temp = 1;
+            }
+            if(temp>maxCnt){
+                maxCnt = temp;
             }
         }
-        System.out.print(cnt);
+        System.out.print(maxCnt);
     }
 }
