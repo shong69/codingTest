@@ -24,8 +24,7 @@ public class Main {
             }
         }
         
-        int x1 = 0,x2=-1000,y1=0,y2=-1000;
-
+        int x1 = 0,x2=0,y1=0,y2=0;
         for(int i=1000+Math.min(rect1_x1,rect2_x1);i<1000+Math.max(rect1_x2,rect2_x2)+1;i++){
             for(int j=1000+Math.min(rect1_y1,rect2_y1);j<1000+Math.max(rect1_y2,rect2_y2)+1;j++){
                 if(x1==0&&arr[i][j]==1){
@@ -43,6 +42,11 @@ public class Main {
                 }
             }
         }
-        System.out.print((Math.abs(x2)-Math.abs(x1)+1)*(Math.abs(y2)-Math.abs(y1)+1));
+        // System.out.println(Math.abs(x1)+" "+Math.abs(x2)+" "+Math.abs(y1)+" "+Math.abs(y2));
+        if((Math.abs(x2)-Math.abs(x1))==0||(Math.abs(y2)-Math.abs(y1))==0){
+            System.out.print(0);
+        }else{
+            System.out.print((Math.abs(x2)-Math.abs(x1)+1)*(Math.abs(y2)-Math.abs(y1)+1));
+        }
     }
 }
