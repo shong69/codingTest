@@ -26,19 +26,19 @@ public class Main {
         
         int x1 = 0,x2=-1000,y1=0,y2=-1000;
 
-        for(int i=Math.min(rect1_x1,rect2_x1);i<Math.max(rect1_x2,rect2_x2)+1;i++){
-            for(int j=Math.min(rect1_y1,rect2_y1);j<Math.max(rect1_y2,rect2_y2)+1;j++){
-                if(x1==0&&arr[1000+i][1000+j]==1){
+        for(int i=1000+Math.min(rect1_x1,rect2_x1);i<1000+Math.max(rect1_x2,rect2_x2)+1;i++){
+            for(int j=1000+Math.min(rect1_y1,rect2_y1);j<1000+Math.max(rect1_y2,rect2_y2)+1;j++){
+                if(x1==0&&arr[i][j]==1){
                     x1 =i;
                 }
-                if(arr[1000+i][1000+j]==1&&x2<=i){
+                if(arr[i][j]==1&&x2<=i){
                     x2 = i;
                 }
 
-                if(y1==0&&arr[1000+i][1000+j]==1){
+                if(y1==0&&arr[i][j]==1){
                     y1 =j;
                 }
-                if(arr[1000+i][1000+j]==1 && y2<=j){
+                if(arr[i][j]==1 && y2<=j){
                     y2= j;
                 }
             }
