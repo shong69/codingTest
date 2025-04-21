@@ -24,29 +24,30 @@ public class Main {
             }
         }
         
-        int x1 = 0,x2=0,y1=0,y2=0;
-        for(int i=1000+Math.min(rect1_x1,rect2_x1);i<1000+Math.max(rect1_x2,rect2_x2)+1;i++){
-            for(int j=1000+Math.min(rect1_y1,rect2_y1);j<1000+Math.max(rect1_y2,rect2_y2)+1;j++){
-                if(x1==0&&arr[i][j]==1){
-                    x1 =i;
+        int x1 =1000+Math.max(rect1_x2,rect2_x2),x2=0,y1=1000+Math.max(rect1_y2,rect2_y2),y2=0;
+
+        boolean isExist = false;
+        for(int i=Math.min(rect1_x1,rect2_x1);i<Math.max(rect1_x2,rect2_x2)+1;i++){
+            for(int j=Math.min(rect1_y1,rect2_y1);j<Math.max(rect1_y2,rect2_y2)+1;j++){
+                if(arr[1000+i][1000+j]==1&&Math.min(x1,1000+i)==1000+i){
+                    x1= 1000+i;
                 }
-                if(arr[i][j]==1&&x2<=i){
-                    x2 = i;
+                if(arr[1000+i][1000+j]==1 && x2<=1000+i){
+                    isExist = true;
+                    x2 = 1000+i;
+                }
+                if(arr[1000+i][1000+j]==1&&Math.min(y1,1000+j)==1000+j){
+                    y1= 1000+j;
                 }
 
-                if(y1==0&&arr[i][j]==1){
-                    y1 =j;
-                }
-                if(arr[i][j]==1 && y2<=j){
-                    y2= j;
+                if(arr[1000+i][1000+j]==1 && y2<=1000+j){
+                    y2= 1000+j;
                 }
             }
         }
-        // System.out.println(Math.abs(x1)+" "+Math.abs(x2)+" "+Math.abs(y1)+" "+Math.abs(y2));
-        if((x1==y1)||(x2==y2)){
-            System.out.print(0);
-        }else{
-            System.out.print((Math.abs(x2)-Math.abs(x1)+1)*(Math.abs(y2)-Math.abs(y1)+1));
-        }
+        // System.out.println(x1+" "+x2+" "+y1+" "+y2);
+
+        if(isExist)System.out.println((x2-x1+1)*(y2-y1+1));
+        else System.out.print(0);
     }
 }
