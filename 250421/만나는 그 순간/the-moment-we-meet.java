@@ -39,7 +39,7 @@ public class Main {
         }
 
         boolean isTrue = false;
-        for(int i=1;i<1000000;i++){
+        for(int i=1;i<Math.max(cho1,cho2);i++){
             if(i!=1&&arr1[i]==arr2[i]){
                 isTrue= true;
                 System.out.print(i);
