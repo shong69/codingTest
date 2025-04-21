@@ -43,7 +43,7 @@ public class Main {
             }
         }
         // System.out.println(Math.abs(x1)+" "+Math.abs(x2)+" "+Math.abs(y1)+" "+Math.abs(y2));
-        if((Math.abs(x2)-Math.abs(x1))==0||(Math.abs(y2)-Math.abs(y1))==0){
+        if((x1==y1)||(x2==y2)){
             System.out.print(0);
         }else{
             System.out.print((Math.abs(x2)-Math.abs(x1)+1)*(Math.abs(y2)-Math.abs(y1)+1));
