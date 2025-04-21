@@ -15,23 +15,28 @@ public class Main {
             char d = sc.next().charAt(0);
             for(int j=0;j<t;j++){
                 if(d=='R'){
-                    arr1[cho1++] = pos1++;
+                    arr1[cho1++] = ++pos1;
                 }else{
-                    arr1[cho1++] = pos1--;
+                    arr1[cho1++] = --pos1;
                 }
             }
         }
-        
+        for(int i=cho1;i<arr1.length;i++){
+            arr1[i]=pos1;
+        }
         for (int i = 0; i < m; i++) {
             int t = sc.nextInt();
             char d = sc.next().charAt(0);
             for(int j=0;j<t;j++){
                 if(d=='R'){
-                    arr2[cho2++] = pos2++;
+                    arr2[cho2++] = ++pos2;
                 }else{
-                    arr2[cho2++] = pos2--;
+                    arr2[cho2++] = --pos2;
                 }
             }
+        }
+        for(int i=cho2;i<arr2.length;i++){
+            arr2[i]=pos2;
         }
 
         // for(int i=0;i<15;i++){
@@ -46,7 +51,7 @@ public class Main {
         // System.out.println();
         // System.out.println();
         int result = 0;
-        for(int i=0;i<Math.max(cho1,cho2)+1;i++){
+        for(int i=0;i<arr1.length;i++){
             if(i!=0&&arr1[i-1]!=arr2[i-1]&&arr1[i]==arr2[i]){
                 // System.out.print(" i="+i);
                 result++;
