@@ -15,15 +15,16 @@ public class Main {
         y = C;
         // Please write your code here.
         int[] dx = {0,-1,1,0};
-        int[] dy = {-1,0,0,1};
+        int[] dy = {1,0,0,-1};
+        int num = getDir(D);
         arr = new int[N+1][N+1];
-        for(char c:D.toCharArray()){
-            int num = getDir(c);
+        for(int i=0;i<T;i++){
             int nx= x+dx[num];
             int ny= y+dy[num];
-            if(!inRange(x,y,N))
-                num = 3-getDir(c);
-            else{
+            if(!inRange(nx,ny,N)){
+                num=3-num;
+                continue;
+            }else{
                 x = x + dx[num];
                 y = y + dy[num];
             }
@@ -31,12 +32,12 @@ public class Main {
         }
         System.out.print(x+" "+y);
     }
-    public static int getDir(char c){
-        if(c=='R'){
+    public static int getDir(String c){
+        if(c.equals("R")){
             return 0;
-        }else if(c=='L'){
+        }else if(c.equals("L")){
             return 3;
-        }else if(c=='D'){
+        }else if(c.equals("D")){
             return 1;
         }else{
             return 2;
