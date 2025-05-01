@@ -17,16 +17,14 @@ public class Main {
         int[] dx = {0,-1,1,0};
         int[] dy = {1,0,0,-1};
         int num = getDir(D);
-        arr = new int[N+1][N+1];
         for(int i=0;i<T;i++){
             int nx= x+dx[num];
             int ny= y+dy[num];
             if(!inRange(nx,ny,N)){
                 num=3-num;
-                continue;
             }else{
-                x = x + dx[num];
-                y = y + dy[num];
+                x = nx;
+                y = ny;
             }
 
         }
@@ -38,9 +36,9 @@ public class Main {
         }else if(c.equals("L")){
             return 3;
         }else if(c.equals("D")){
-            return 1;
-        }else{
             return 2;
+        }else{
+            return 1;
         }
     }
     public static boolean inRange(int x, int y, int N){
