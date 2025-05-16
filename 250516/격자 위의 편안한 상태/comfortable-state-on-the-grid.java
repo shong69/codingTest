@@ -11,29 +11,26 @@ public class Main {
             int y = sc.nextInt()-1;
             arr[x][y]=1;
             int pass = 0;
-            if(inRange(x,y)) {
-                if(arr[x-1][y]==1)pass++;
-                if(arr[x][y-1]==1)pass++;
-                if(arr[x+1][y]==1)pass++;
-                if(arr[x][y+1]==1)pass++;
-            
-                if(pass==3) {
-                    System.out.println(1);
-                }else System.out.println(0);
-            }else {
-                System.out.println(0);
-            }
+            if(inRange(x-1,y)&&arr[x-1][y]==1)pass++;
+            if(inRange(x,y-1)&&arr[x][y-1]==1)pass++;
+            if(inRange(x+1,y)&&arr[x+1][y]==1)pass++;
+            if(inRange(x,y+1)&&arr[x][y+1]==1)pass++;
+        
+            if(pass==3) {
+                System.out.println(1);
+            }else System.out.println(0);
+
 
         }
-        // System.out.println();
-        // for(int i=0;i<N;i++){
-        //     for(int j=0;j<N;j++){
-        //         System.out.print(arr[i][j]+" ");
-        //     }
-        //     System.out.println();
-        // }
+    //     System.out.println();
+    //     for(int i=0;i<N;i++){
+    //         for(int j=0;j<N;j++){
+    //             System.out.print(arr[i][j]+" ");
+    //         }
+    //         System.out.println();
+    //     }
     }
     public static boolean inRange(int x, int y){
-        return (0<x&&x<N-1&&0<y&&y<N-1);
+        return (0<=x&&x<N&&0<=y&&y<N);
     }
 }
