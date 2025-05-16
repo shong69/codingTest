@@ -17,7 +17,7 @@ public class Main {
                 if(arr[x+1][y]==1)pass++;
                 if(arr[x][y+1]==1)pass++;
             
-                if(pass>=3) {
+                if(pass==3) {
                     System.out.println(1);
                 }else System.out.println(0);
             }else {
@@ -25,6 +25,13 @@ public class Main {
             }
 
         }
+        // System.out.println();
+        // for(int i=0;i<N;i++){
+        //     for(int j=0;j<N;j++){
+        //         System.out.print(arr[i][j]+" ");
+        //     }
+        //     System.out.println();
+        // }
     }
     public static boolean inRange(int x, int y){
         return (0<x&&x<N-1&&0<y&&y<N-1);
